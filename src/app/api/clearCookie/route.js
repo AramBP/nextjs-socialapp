@@ -1,11 +1,10 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
-export async function POST(request) {
+export async function GET(request) {
   try {
-    let cookie = await request.json();
-    cookies().set("isLoggedIn", cookie, { secure: true, httpOnly: true });
-    return NextResponse.json({});
+    cookies().delete("isLoggedIn");
+    return NextResponse.json("Cookie succefully deleted");
   } catch (err) {
     return new Response(
       JSON.stringify({ error: err.message || err.toString() }),
