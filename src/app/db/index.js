@@ -26,23 +26,6 @@ export class DatabaseClient {
     return listItems;
   }
 
-  //authenticate handles authentication of user
-  async authenticate(email, password) {
-    try {
-      const result = await this.client
-        .collection("users")
-        .authWithPassword(email, password);
-      //throw error if there is no token in the result
-      if (!result?.token) {
-        throw new Error("Invalid email or password");
-      }
-      return result;
-    } catch (err) {
-      console.error(err);
-      throw new Error("Invalid email or password");
-    }
-  }
-
   //handle user registration
   async register(email, password) {
     try {

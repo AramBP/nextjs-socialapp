@@ -5,7 +5,8 @@ And Pocketbase for the backend.
 Todo:
 * Authorization
     * [x] Add OAuth functionality 
-    * [ ] Add basic email/pass auth
+    * [x] Add email/pass auth
+    * [ ] Add signup with email/password
     * [ ] Add logout functionality
     * [ ] Add confirm email functionality
     * [ ] Add password reset functionaluty
