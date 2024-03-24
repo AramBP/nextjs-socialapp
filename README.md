@@ -9,7 +9,7 @@ Todo:
   - [x] Add email/pass auth
   - [x] Add signup with email/password
   - [x] Add logout functionality
-  - [ ] Add confirm email functionality
+  - [x] Add confirm email functionality
   - [ ] Add password reset functionaluty
   - [ ] Stylize login/signup pages with shadcn-ui
 
