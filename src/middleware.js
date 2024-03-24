@@ -6,10 +6,12 @@ export async function middleware(request) {
     //print request method and url
     console.log(`[middleware] ${request.method} ${request.url}`);
     //declare variables here
+
+    //read the cookie set in the setCookie endpoint
     const cookieStore = cookies();
     const isAuth = cookieStore.get("isLoggedIn");
     let isLoggedIn = false;
-    if (isAuth.value === 'true'){
+    if (isAuth?.value === 'true'){
         isLoggedIn = true;
     } else {
         isLoggedIn = false;

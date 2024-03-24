@@ -5,7 +5,7 @@ import db from "../../db"
 import {useRouter} from "next/navigation"
 
 export default function LoginPage(){
-    const pb = new PocketBase('http://localhost:8090');
+    const pb = new PocketBase("http://localhost:8090");
     pb.autoCancellation(false);
 
     const router = useRouter();
@@ -21,14 +21,13 @@ export default function LoginPage(){
         getProviders();
     }, []);
 
-
-    const redirectUrl = "http://127.0.0.1:8090/api/oauth2-redirect";
     async function loginOAuth (providerName){
         try{
             const result = await pb.collection('users').authWithOAuth2({provider: providerName});
             // set the cookie with an api endpoint
             const isAuth = pb.authStore.isValid;
-            await fetch("http://localhost:3000/api/setCookie", {
+            const url = "http://localhost:3000/api/setCookie";
+            await fetch(url, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(isAuth)
