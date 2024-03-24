@@ -3,8 +3,8 @@ And Pocketbase for the backend.
 
 
 Todo:
-    - Add OAuth functionality (done)
-    - Add basic email/pass auth
-    - Add confirm email functionality
-    - Add password reset functionaluty
-    - Stylize login/signup pages with shadcn-ui
+    -[x] Add OAuth functionality 
+    -[] Add basic email/pass auth
+    -[] Add confirm email functionality
+    -[] Add password reset functionaluty
+    -[] Stylize login/signup pages with shadcn-ui
