@@ -1,7 +1,4 @@
 import PocketBase from "pocketbase";
-import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
-
-export const POCKET_BASE_URL = "http://localhost:8090";
 
 export class DatabaseClient {
   //pocketbase instant
@@ -9,7 +6,7 @@ export class DatabaseClient {
 
   constructor() {
     //instantiate PocketBase before use
-    this.client = new PocketBase(POCKET_BASE_URL);
+    this.client = new PocketBase(process.env.DB_HOST);
     this.client.autoCancellation(false);
   }
 
@@ -40,6 +37,11 @@ export class DatabaseClient {
       console.log("Cant create user");
       console.error(err);
     }
+  }
+
+  async getUserData(id) {
+    const userdata = await this.client.collection("users").getOne(id);
+    return userdata;
   }
 }
 
