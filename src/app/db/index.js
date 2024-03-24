@@ -6,7 +6,7 @@ export class DatabaseClient {
 
   constructor() {
     //instantiate PocketBase before use
-    this.client = new PocketBase(process.env.DB_HOST);
+    this.client = new PocketBase("http://localhost:8090");
     this.client.autoCancellation(false);
   }
 
