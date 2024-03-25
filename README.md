@@ -10,6 +10,7 @@ Todo:
   - [x] Add signup with email/password
   - [x] Add logout functionality
   - [x] Add confirm email functionality
+  - [ ] Improve authorzation, right now its just a cookie that stores "isLoggedIn" as a boolean
   - [ ] Add password reset functionaluty
   - [ ] Stylize login/signup pages with shadcn-ui
 
