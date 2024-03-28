@@ -38,11 +38,6 @@ export class DatabaseClient {
       console.error(err);
     }
   }
-
-  async getUserData(id) {
-    const userdata = await this.client.collection("users").getOne(id);
-    return userdata;
-  }
 }
 
 export const db = new DatabaseClient();
